@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix Demo</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body background="https://assets.nflxext.com/ffe/siteui/vlv3/893a42ad-6a39-43c2-bbc1-a951ec64ed6d/1d86e0ac-428c-4dfa-9810-5251dbf446f8/IN-en-20231002-popsignuptwoweeks-perspective_alpha_website_medium.jpg">
+    <header>
+        <nav class="navbar navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <img src="netflix-logo.png" alt="Netflix Logo" class="logo-img">
+                </a>
+                <div class="menu">
+                    <a href="#">Home</a>
+                    <a href="#">TV Shows</a>
+                    <a href="#">Movies</a>
+                    <a href="#">My List</a>
+                </div>
+            </div>
+        </nav>
+        <div class="hero text-center py-5">
+            <h1>Unlimited movies, TV shows, and more.</h1>
+            <p>Watch anywhere. Cancel anytime.</p>
+            <a href="#" class="btn btn-danger btn-lg cta">Subscribe Now</a>
+        </div>
+        <div class="wave"></div>
+    </header>
+    <main>
+        <section class="container featured">
+            <h2>Featured Titles</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="movie-card">
+                        <img src="https://m.media-amazon.com/images/M/MV5BMGU5ODIyODMtMDRkOC00NDhhLThkYWEtOWIxZGQ4MGQ4OGM1XkEyXkFqcGdeQXVyNjQ1MDcxNzM@._V1_.jpg" alt="Movie 1" class="img-fluid">
+                        <h3>Kushi</h3>
+                    </div>
+                </div>
+                <!-- More movie cards go here -->
+            </div>
+        </section>
+        <section class="container popular">
+            <h2>Popular Now</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="movie-card">
+                        <img src="https://m.media-amazon.com/images/M/MV5BZmFmOTliOTQtOTBjYy00YWM3LTk2NmMtZjMyOTNhYjEyNTdhXkEyXkFqcGdeQXVyMTI1NDAzMzM0._V1_.jpg" alt="Movie 2" class="img-fluid">
+                        <h3>Bheemla Nayak</h3>
+                    </div>
+                </div>
+                <!-- More movie cards go here -->
+            </div>
+        </section>
+    </main>
+    <footer class="text-white text-center py-3">
+        <p>&copy; 2023 Netflix Demo</p>
+        <a href="page2.html">Go to Page 2</a>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="Script.js">
+        document.addEventListener("DOMContentLoaded", function () {
+    const featuredMovies = [
+        { title: "Movie 1", image: "movie1.jpg" },
+        { title: "Movie 2", image: "movie2.jpg" },
+        { title: "Movie 3", image: "movie3.jpg" },
+        // Add more featured movies here
+    ];
+
+    const popularMovies = [
+        { title: "Movie 4", image: "movie4.jpg" },
+        { title: "Movie 5", image: "movie5.jpg" },
+        { title: "Movie 6", image: "movie6.jpg" },
+        // Add more popular movies here
+    ];
+
+    function createMovieCard(movie) {
+        const card = document.createElement("div");
+        card.className = "col-md-4";
+        card.innerHTML = `
+            <div class="movie-card">
+                <img src="${movie.image}" alt="${movie.title}" class="img-fluid">
+                <h3>${movie.title}</h3>
+            </div>
+        `;
+        return card;
+    }
+
+    function renderMovieCards(container, movies) {
+        const row = container.querySelector(".row");
+        movies.forEach((movie) => {
+            const card = createMovieCard(movie);
+            row.appendChild(card);
+        });
+    }
+
+    const featuredMoviesSection = document.querySelector(".featured-movies");
+    const popularMoviesSection = document.querySelector(".popular-movies");
+
+    renderMovieCards(featuredMoviesSection, featuredMovies);
+    renderMovieCards(popularMoviesSection, popularMovies);
+});
+    </script>
+</body>
+</html>
+git add .
